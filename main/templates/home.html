@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'home.css'%}
+</head>
+<body>
+    <div class="title">
+        <h1>STUDENTS LIST</h1>
+    </div>
+    <div class="student_list">
+        {% for student in all_students %}
+            <div class="pill">
+                <h1 class="pill_title">{{student.student_id | upper}}</h1>
+                <div class="pill_info">
+                    <p id="name">{{student.last_name}}, {{student.first_name}}</p>
+                    <p>DEPARTMENT: {{student.department}}</p>
+                    <P>AGE: {{student.age}}</p>
+                    <p>GENDER: {{student.gender}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
